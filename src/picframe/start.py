@@ -97,9 +97,9 @@ def main():
     group.add_argument("configfile", nargs='?', help="/path/to/configuration.yaml")
     args = parser.parse_args()
     if args.initialize:
-        if os.geteuid() == 0:
-            print("Don't run the initialize step with sudo. It might put the files in the wrong place!")
-            return
+        # if os.geteuid() == 0:
+           # print("Don't run the initialize step with sudo. It might put the files in the wrong place!")
+           # return
         pkgdir = sys.modules['picframe'].__path__[0]
         try:
             dest = os.path.abspath(os.path.expanduser(args.initialize))
